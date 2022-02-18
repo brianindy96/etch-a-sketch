@@ -1,10 +1,11 @@
 // create 16x16 Grids inside container 
-
+const body = document.body;
 const container = document.querySelector(".container");
 const reset = document.querySelector(".reset");
 const rgb = document.querySelector(".change-color");
 const black = document.querySelector(".black");
-
+const title = document.querySelector(".title");
+const link = document.querySelector("a");
 
 function makeGrids(rows,cols){
   // i = total grids need created 
@@ -20,11 +21,15 @@ function makeGrids(rows,cols){
 }
 
 function blackColor(){
+  body.style.background = "var(--color3)";
+  title.style.color = "var(--color1)";
+  container.style.border = "1px var(--color4) solid";
   const boxes = container.querySelectorAll(".box");
   boxes.forEach(box =>{
     box.addEventListener("mouseenter", ()=>{
-      box.style.background = "black";
-      box.style.border = "1px solid red";
+      box.style.background = "var(--color1)";
+      box.style.border = "1px solid var(--color5)";
+      
     })
   })
 }
@@ -33,7 +38,7 @@ function resetBtn(){
   reset.innerHTML = "Reset"
   const boxes = container.querySelectorAll(".box");
   boxes.forEach(box =>{
-    box.style.background = "white";
+    box.style.background = "var(--color4)";
     box.remove();
   })
   resizeGrid()
@@ -52,6 +57,10 @@ function resizeGrid(){
 
 
 function rgbColor(){
+  body.style.background = "var(--color1)";
+  title.style.color = "var(--color4)";
+  container.style.border = "1px var(--color4) solid";
+  link.style.color = "var(--color4)";
   const boxes = container.querySelectorAll(".box");
   boxes.forEach(box =>{
     box.addEventListener("mouseenter", ()=>{
@@ -59,6 +68,7 @@ function rgbColor(){
       const g =Math.floor(Math.random() * 255);
       const b =Math.floor(Math.random() * 255);
       box.style.background = `rgb(${r},${g},${b})`;
+      box.style.border = "1px solid var(--color1)"
     })
   })
 }

@@ -1,39 +1,53 @@
 :root{
+    --color1: black;
+    --color2: purple;
+    --color3: yellow;
+    --color4: white;
+    --color5: red;
     --grid-cols: 1;
     --grid-rows: 1;
 }
 
+.title{
+    margin-top: 40px;
+    font-size: 100px;
+    font-weight: 900;
+}
+
 button{
+    margin-left: 30px;
+    opacity: 0.5;
     width: 259px;
     height: 75px;
-    margin-left: 10px;
     margin-top: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: 0.07s ease;
 }
 
 .btn-container{
     display: flex;
-    flex-direction: column;
-    margin-left: 150px;
-    padding: 100px 0px;
+    margin-bottom: 50px;
     justify-content: space-between;
 }
 
 body{
-    background-image: linear-gradient(rgb(255, 0, 0),white,red);
+    background-color: yellow;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 .container{
     margin-top: 40px;
     margin-bottom: 40px;
     background-color: white;
     display: grid;
-    height: 900px;
-    width: 900px;;
+    height: 960px;
+    width: 960px;;
     border: black 1px solid;
     /* repeat the column 16 rows and 16 columns, each with 1fraction */
     grid-template-columns: repeat(var(--grid-cols),1fr);
@@ -42,4 +56,29 @@ body{
 
 .box{
     border: 1px black solid;
+}
+
+
+button:hover{
+    transform: scale(1.2);
+    opacity: 1;
+    background-color: purple;
+    color: white;
+}
+
+footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 1.4em;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+    transition: 0.07s ease-in-out;
+}
+
+footer a:hover{
+    letter-spacing: 1.5px;
 }
